@@ -1,4 +1,5 @@
 from django.db import models
+
 from shop.models import Product
 
 
@@ -7,7 +8,7 @@ class Order(models.Model):
     first_name = models.CharField(max_length=50, verbose_name='Имя')
     last_name = models.CharField(max_length=50, verbose_name='Фамилия')
     email = models.EmailField(verbose_name='Электронная почта')
-    address = models.CharField(max_length=250, verbose_name='Адрес')
+    address = models.CharField(max_length=250, verbose_name='Улица')
     postal_code = models.CharField(max_length=20, verbose_name='Почтовый код')
     city = models.CharField(max_length=100, verbose_name='Город')
     created = models.DateTimeField(
