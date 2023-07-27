@@ -23,6 +23,7 @@ INSTALLED_APPS = [
     'shop.apps.ShopConfig',
     'cart.apps.CartConfig',
     'orders.apps.OrdersConfig',
+    'payment.apps.PaymentConfig',
 ]
 
 MIDDLEWARE = [
@@ -98,6 +99,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Настроечные параметры Stripe
-STRIPE_PUBLISHABLE_KEY = os.environ.get('STRIPE_PUBLISHABLE_KEY', 'enter your stripe publish key')  # Публикуемый ключ
+STRIPE_PUBLISHABLE_KEY = os.environ.get('STRIPE_PUBLISHABLE_KEY', 'enter your stripe publish key')
 STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY', 'enter your stripe secret key')
 STRIPE_API_VERSION = os.environ.get('STRIPE_API_VERSION', '2022-08-01')
+STRIPE_WEBHOOK_SECRET = os.environ.get('STRIPE_WEBHOOK_SECRET', 'ваш секретный ключ вебхук')
