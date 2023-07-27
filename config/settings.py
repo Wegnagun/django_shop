@@ -93,5 +93,11 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
 # настройки отправки почти
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# Настроечные параметры Stripe
+STRIPE_PUBLISHABLE_KEY = os.environ.get('STRIPE_PUBLISHABLE_KEY', 'enter your stripe publish key')  # Публикуемый ключ
+STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY', 'enter your stripe secret key')
+STRIPE_API_VERSION = os.environ.get('STRIPE_API_VERSION', '2022-08-01')
